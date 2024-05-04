@@ -83,5 +83,16 @@ class HttpTest extends TestCase
         self::assertTrue($response->ok());
     }
 
+    public function testMultipart()
+    {
+        $response = Http::asMultipart()
+            ->attach("profile", file_get_contents(__DIR__ . '/HttpTest.php') , "profile.jpg")
+            ->post("https://en0t0nwzu0td7b.x.pipedream.net", [
+                "username" => "admin",
+                "password" => "admin"
+            ]);
+        self::assertTrue($response->ok());
+    }
+
 
 }
