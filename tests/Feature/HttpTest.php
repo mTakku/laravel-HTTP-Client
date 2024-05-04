@@ -59,5 +59,20 @@ class HttpTest extends TestCase
         self::assertTrue($response->ok());
     }
 
+    public function testCookie()
+    {
+        $response = Http::withQueryParameters([
+            'page' => 1,
+            'limit' => 10,
+        ])->withHeaders([
+            'Accept' => 'application/json',
+            'X-Request-ID' => '123123123',
+        ])->withCookies([
+            "SessionId" => "3242432423",
+            "UserId" => "farel",
+        ], "en0t0nwzu0td7b.x.pipedream.net")->get("https://en0t0nwzu0td7b.x.pipedream.net");
+        self::assertTrue($response->ok());
+    }
+
 
 }
