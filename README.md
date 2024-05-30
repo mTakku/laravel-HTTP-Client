@@ -8,7 +8,7 @@
 > - PHP 8.1.0
 > - LARAVEL 9.1.10
 >   ```
->   Composer Create-project laravel\laravel=v9.1.10 laravel-blade
+>   Composer Create-project laravel\laravel=v9.1.10 laravel-http client
 >   ```
 > - pipedream
 >   ```
